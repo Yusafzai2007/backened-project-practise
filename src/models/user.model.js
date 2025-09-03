@@ -25,7 +25,7 @@ const userschema = new mongoose.Schema(
       trim: true,
       index: true,
     },
-     avator:{
+     avatar:{
       type:String,
       required:true
      },
@@ -84,4 +84,4 @@ userschema.methods.generateRefreshToken = function () {
   );
 };
 
-export const User = mongoose.model("Userdata", userschema);
+export const User = mongoose.model("Userdata",userschema);

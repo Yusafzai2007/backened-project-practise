@@ -18,7 +18,8 @@ const uploadcloudinary=async(loaclfilepath)=>{
 
         })
         //fieles upload successfully
-        console.log("file uploaded successfully",response.url);
+       console.log("file uploaded successfully",response.url);
+    //   fs.unlink(loaclfilepath)
         return response;
         
     } catch (error) {

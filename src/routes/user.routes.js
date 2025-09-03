@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { requesthandler } from "../contollers/user.controller.js"; 
+import { loggedinuser, logoutuser, requesthandler } from "../contollers/user.controller.js"; 
 import  {upload} from "../middlewares/multer.middleware.js"
+import { jwtverify } from "../middlewares/auth.midlleware.js";
 const router = Router();
 
 router.post("/register",
@@ -15,6 +16,31 @@ router.post("/register",
        }
      ]),
     requesthandler);
+
+router.route("/login").post(loggedinuser)
+router.route("/logout").post(jwtverify,logoutuser)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 console.log("✅ user.routes.js loaded");
+
+
+
+
+
+
+
+
 
 export default router;
